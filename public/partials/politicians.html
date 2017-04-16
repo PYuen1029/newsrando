@@ -1,0 +1,16 @@
+<div class="projects-holder-3">
+	<div class="projects-holder">
+		<div class="row">
+			<div class="col-xs-12 col-xs-12">
+				<ul class="event-list">
+					<li ng-repeat="politician in politicians track by $index">
+						<div class="info">
+							<h2 class="title">{{politician.name}}</h2>
+							<p class="desc">Tags: {{ tagList(politician.tags) }}</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div> <!-- /.row -->
+	</div> <!-- /.projects-holder -->
+</div> <!-- /.projects-holder-2 -->

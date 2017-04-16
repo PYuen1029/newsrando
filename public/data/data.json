@@ -1,0 +1,39 @@
+[
+	{
+		"name": "Donald Trump",
+		"title": "Donald Trump said that he would release his tax returns when President Obama released his birth certificate. After the president did, Donald Trump still has not released his tax returns.",
+		"summary": "Donald Trump said that he would release his tax returns when President Obama released his birth certificate. After the president did, Donald Trump still has not released his tax returns.",
+		"flip": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati dolorem inventore accusamus laboriosam ab.",
+		"flop": "beatae blanditiis fugiat quam molestiae harum quisquam eius eum id repudiandae natus. Soluta sequi, delectus illum.",
+		"sourceType": "text",
+		"flipSource": "10/1/2011",
+		"flopSource": "10/1/2014",
+		"flipBackground": "donald_trump_red.png",
+		"flopBackground": "donald_trump_blue.png"
+	},
+	{
+		"name": "Hillary Clinton",
+		"title": "Supporting TPP ",
+		"summary": "Hillary Clinton claims to be opposed to the TPP during the 2016 election cycle but originally supported it.",
+		"flip": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati dolorem inventore accusamus laboriosam ab.",
+		"flop": "beatae blanditiis fugiat quam molestiae harum quisquam eius eum id repudiandae natus. Soluta sequi, delectus illum.",
+		"sourceType": "audio",
+		"flipSource": "05/24/2012",
+		"flopSource": "05/24/2015",
+		"flipBackground": "hillary_clinton_red.png",
+		"flopBackground": "hillary_clinton_blue.png"
+	},
+	{
+		"name": "Mitt Romney",
+		"title": "Stem Cell Research",
+		"summary": "Mitt Romney originally supported stem cell research, but later opposed it when running for president.",
+		"flip": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati dolorem inventore accusamus laboriosam ab.",
+		"flop": "beatae blanditiis fugiat quam molestiae harum quisquam eius eum id repudiandae natus. Soluta sequi, delectus illum.",
+		"sourceType": "text",
+		"flipSource": "04/24/2008",
+		"flopSource": "04/24/2012",
+		"flipBackground": "mitt_romney_red.png",
+		"flopBackground": "mitt_romney_blue.png"
+	}
+
+]

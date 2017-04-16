@@ -1,0 +1,35 @@
+<div class="container">
+	<h1 class="center-align"> News Source Manager </h1>
+	<ul class="collection">
+		<li class="collection-item" ng-if="user.newsSources.length <= 0">
+			You currently do not have any news sources added.
+		</li>
+		<li class="row collection-item" ng-repeat="newsSource in user.newsSources">
+			<div class="col s10">
+				URL: {{newsSource.url}}
+			</div>
+			<div class="col s2">
+				<button class="btn red lighten-1" data-delete-id="{{newsSource.id}}" ng-click="deleteNewsSource($event)">
+					Delete
+				</button>
+			</div>
+		</li>
+		<li class="text-center btn full-width newsSource__add-news-source" ng-click="openAddNewsSourceModal()">
+			Add a News Source
+		</li>
+	</ul>
+</div>
+
+<!-- Add News Source Modal -->
+<div id="addNewsSourceModalWrapper" class="modal bottom-sheet">
+	<div class="modal-content">
+		<h4>Add a News Source:</h4>
+		<div class="input-field s12">
+			<input type="text" placeholder="URL" class="newsSourceUrl validate" name="newsSourceUrl">
+		</div>
+	</div>
+	<div class="modal-footer">
+		<a class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="submitNewsSource($event)">Submit</a>
+		<a class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+	</div>
+</div>

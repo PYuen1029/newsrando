@@ -1,0 +1,19 @@
+{
+  "name": "angular-gulp-browserify-starter",
+  "version": "0.0.0",
+  "authors": [
+    "Michael Herman <hermanmu@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "html5-boilerplate": "^5.3.0",
+    "materialize": "^0.98.0"
+  }
+}

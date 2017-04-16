@@ -1,0 +1,5 @@
+<div class="filter-categories tag-pen">
+	<ul class="project-filter text-center">
+		<li ng-repeat="button in buttons" class="filter" ng-class="{activated: button.on}" data-filter="{{button.value}}" ng-click="toggleButton(button)"><span>{{button.value}}</span></li>
+	</ul>
+</div>

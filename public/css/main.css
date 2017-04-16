@@ -1,0 +1,48 @@
+.more-text {
+	display: none;
+}
+
+.logo > h1 a {
+	font-family: "Roboto Slab", serif;
+	color: #4282bd;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 2em;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 1px;
+	-webkit-transition: all 550ms ease-in-out;
+	-moz-transition: all 550ms ease-in-out;
+	transition: all 550ms ease-in-out;
+}
+
+.logo > h1 em {
+	font-style: normal;
+	color: #BE1919;
+	margin-right: 5px;
+	-webkit-transition: all 550ms ease-in-out;
+	-moz-transition: all 550ms ease-in-out;
+	transition: all 550ms ease-in-out;
+}
+
+.logo > h1:hover a {
+	color: #BE1919;
+}
+
+.logo > h1:hover em {
+	color: #4282bd;
+}
+
+.home__user_details li span {
+	float: right;
+	padding-right: 70px;
+}
+
+.container h1 {
+	font-size: 4.2rem;
+	line-height: 110%;
+}
+
+p.login-form-text {
+	font-size: 24px;
+}

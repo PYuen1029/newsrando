@@ -1,0 +1,92 @@
+<div class="content submit__container">
+	<form class="form-horizontal">
+<!-- TITLE -->
+		<div class="form-group">
+			<label for="submit__title" class="col-sm-2 control-label">Title</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="submit__title" placeholder="Enter Title">
+			</div>
+		</div>
+<!-- SUMMARY -->
+		<div class="form-group">
+			<label for="submit__content" class="col-sm-2 control-label"> Summary </label>
+			<div class="col-sm-10">
+				<textarea rows="5" class="form-control" id="submit__summary" placeholder="Summary"></textarea>
+			</div>
+		</div>
+<!-- SOURCE_TYPE -->
+		<div class="form-group">
+			<label for="submit__source-type" class="col-sm-2 control-label">Type of Evidence</label>
+			<div class="col-sm-10">
+				<label class="radio-inline">
+					<input type="radio" class="submit__source-type" 
+						ng-model="type" id="submit__source-type-youtube" 
+						value="youtube" checked="checked" ng-change="changeForm('youtube')"
+						name="submit__source-type"> Youtube (URL) 
+				</label>
+				<label class="radio-inline">
+					<input type="radio" class="submit__source-type"
+						ng-model="type" id="submit__source-type-text" 
+						value="text" name="submit__source-type"
+						ng-change="changeForm('text')"> Text 
+				</label>
+			</div>
+		</div>
+<!-- FLIP -->
+		<div ng-switch="type" class="form-group">
+			<label for="submit__flip" class="col-sm-2 control-label"> Flip {{typeText}} </label>
+			<div class="col-sm-10 submit__flip-text" ng-switch-default="text" id="submit__flip-wrapper">
+				<textarea rows="5" class="form-control" name="submit__flip" placeholder="Text"></textarea>
+			</div>
+			<div class="col-sm-10 submit__flip-text" ng-switch-when="youtube" id="submit__flip-wrapper">
+				<input class="col-xs-8" name="submit__flip" placeholder="Youtube Source (URL)" type="text">
+				<label for="submit__flip-yt-time" class="col-xs-2"> Start Time (mm:ss) </label>
+				<input type="text" id="submit__flip-yt-time" name="submit__flip-yt-time" class="col-xs-2" placeholder="e.g., 01:23">
+			</div>
+		</div>
+<!-- FLIP_SOURCE -->
+		<div ng-if='type == "text"' class="form-group">
+			<label for="submit__flip-source" class="col-sm-2 control-label">Flip Source</label>
+			<div class="col-sm-10" id="submit__flip-source-wrapper">
+				<input type="text" class="form-control" id="submit__flip-source" placeholder="e.g., www.example.com/example" aria-describedby="Flip Source">
+			</div>
+		</div>
+<!-- FLOP -->
+		<div ng-switch="type" class="form-group">
+			<label for="submit__flop" class="col-sm-2 control-label"> Flop {{typeText}} </label>
+			<div class="col-sm-10 submit__flop-text" ng-switch-default="text" id="submit__flip-wrapper">
+				<textarea rows="5" class="form-control" name="submit__flop" placeholder="Text"></textarea>
+			</div>
+			<div class="col-sm-10 submit__flop-youtube" ng-switch-when="youtube" id="submit__flip-wrapper">
+				<input class="col-xs-8" name="submit__flop" placeholder="Youtube Source (URL)" type="text">
+				<label for="submit__flop-yt-time" class="col-xs-2"> Start Time (mm:ss) </label>
+				<input type="text" id="submit__flop-yt-time" name="submit__flop-yt-time" class="col-xs-2" placeholder="e.g., 01:23">
+			</div>
+		</div>
+<!-- FLOP_SOURCE -->
+		<div ng-if='type == "text"' class="form-group">
+			<label for="submit__flop-source" class="col-sm-2 control-label">Flop Source</label>
+			<div class="col-sm-10" id="submit__flop-source-wrapper">
+				<input type="text" class="form-control" id="submit__flop-source" placeholder="e.g., www.example.com/example" aria-describedby="Flop Source">
+			</div>
+		</div>
+
+<!-- POLITICIAN (DROP-DOWN, IN TIME I SHOULD INTEGRATE A POLITICIAN DATABASE) -->
+		<div class="form-group">
+			<label for="submit__politician-select" class="col-sm-2 control-label">Politician: </label>
+			<div class="col-sm-10">
+			<input type="text"
+					ng-model="selectedPolitician"
+					placeholder="Please enter a politician"
+					uib-typeahead="politician as (politician === null) ? '' : politician.first_name + ' ' + politician.last_name for politician in politicians | filter:$viewValue | limitTo:8"
+					class="form-control"
+			>
+
+			</div>
+		</div>
+		<div class="col-xs-offset-2">
+			<button class="btn btn-default submit__button" type="submit" ng-click="flipflopCreate()">Submit</button>
+		</div>
+		
+	</form>
+</div>

@@ -1,0 +1,6 @@
+What I want:
+    You go to your front page. 
+    You see a jcarousel of your news sources.
+    You click an image and it opens a light box showing today's front page.
+    You can click on a Enter button to enter that website
+    

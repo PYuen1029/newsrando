@@ -1,0 +1,56 @@
+<div class="container">
+	<section id="home__random-btn">
+		<button class="waves-effect waves-light btn-large"> Randomize! </button>
+	</section>
+	<section id="home__news-sources">
+		<h1 class="center-align"> News Sources </h1>
+		<!-- http://materializecss.com/carousel.html -->
+
+		<div class="connected-carousels"
+			ng-show="user.loggedIn == 1 && user.newsSources.length > 0"
+		>
+			<div class="stage">
+				<div class="carousel carousel-stage" data-jcarousel="true">
+					<ul style="left: 0px; top: 0px;">
+						<li ng-repeat="newsSource in user.newsSources"
+							data-jcarouselcontrol="true"
+							class="active"
+						>
+							<img ng-src="{{newsSource.ownWebsiteImages[0].path}}"
+									width="600" height="400" alt="">
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="prev prev-stage inactive" data-jcarouselcontrol="true"><span>‹</span></a>
+				<a href="#" class="next next-stage" data-jcarouselcontrol="true"><span>›</span></a>
+			</div>
+
+			<div class="navigation">
+				<a href="#" class="prev prev-navigation inactive" data-jcarouselcontrol="true">‹</a>
+				<a href="#" class="next next-navigation" data-jcarouselcontrol="true">›</a>
+				<div class="carousel carousel-navigation" data-jcarousel="true">
+					<ul style="left: 0px; top: 0px;">
+						<li ng-repeat="newsSource in user.newsSources"
+							data-jcarouselcontrol="true" 
+							class="active"
+						>
+							<img ng-src="{{newsSource.ownWebsiteImages[0].path}}"
+								width="50" height="50" alt=""
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" ng-show="user.loggedIn == 1">
+			<div class="col s3">
+				<a href="#!/NewsSourceManager"> Manage News Sources </a>
+			</div>
+		</div>
+
+		<div ng-show="user.loggedIn != 1">
+			Please <a href="/login">Login</a>.
+		</div>
+	</section>
+</div>
