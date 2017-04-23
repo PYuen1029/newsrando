@@ -1,8 +1,6 @@
 module.exports = function($scope) {
 	$scope.user = window.user;
 
-	
-
 	angular.element(document).ready(function () {
 		// This is the connector function.
 		// It connects one item from the navigation carousel to one item from the

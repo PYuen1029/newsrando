@@ -25,8 +25,12 @@ class NewsSource extends Model
 		$newsSource->base_name = STATIC::getBaseName($newsSource->url);
 
 		$newsSource->save();
-
+		
+		// handle user-newsSource relationship
 		Auth::user()->newsSources()->attach($newsSource);
+
+		// handle frontpage-newsSource relationship
+		$frontpage = Frontpage::selfCreate($newsSource);
 
 		return $newsSource;
 	}

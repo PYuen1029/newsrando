@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -24,8 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $newsSources = $user->newsSources->toJson();
+        if(Auth::check()) {
+            $user = Auth::user();
+            $newsSources = $user->newsSources()->with('frontpages')->get()->toJson();
+        } else {
+            $user = null;
+            $newsSources = null;
+        }
 
         return view('home', ['user' => $user, 'newsSources' => $newsSources]);
     }
