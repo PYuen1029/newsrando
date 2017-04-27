@@ -19,3 +19,8 @@ Route::get('/', [
 Auth::routes();
 
 Route::resource('newssource', 'NewsSourceController');
+
+Route::get('/messonamission', [
+	'uses' => 'HomeController@test',
+	'as' => 'test'
+]);

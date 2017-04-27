@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,5 +34,18 @@ class HomeController extends Controller
         }
 
         return view('home', ['user' => $user, 'newsSources' => $newsSources]);
+    }
+
+    public function test()
+    {
+        $websiteImagePath = public_path() . '/img/websiteImages/economist.com.png';
+        $testPath = public_path() . '/img/WebsiteImages/foo3.png';
+
+        $image = Image::make($websiteImagePath)
+            ->crop(1500, 1500, 1200, 0)
+            ->save($testPath);
+
+        echo 'image created';
+
     }
 }

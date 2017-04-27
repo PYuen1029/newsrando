@@ -2,12 +2,14 @@ module.exports = function($scope) {
 	$scope.user = window.user;
 
 	angular.element(document).ready(function () {
+
 		// This is the connector function.
 		// It connects one item from the navigation carousel to one item from the
 		// stage carousel.
 		// The default behaviour is, to connect items with the same index from both
 		// carousels. This might _not_ work with circular carousels!
 		var connector = function(itemNavigation, carouselStage) {
+
 			return carouselStage.jcarousel('items').eq(itemNavigation.index());
 		};
 
@@ -27,6 +29,9 @@ module.exports = function($scope) {
 				item
 				.on('jcarouselcontrol:active', function() {
 					carouselNavigation.jcarousel('scrollIntoView', this);
+					
+					console.log('HomepageCtrl.js: Line 33 -- wtf');
+
 					item.addClass('active');
 				})
 				.on('jcarouselcontrol:inactive', function() {

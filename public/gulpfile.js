@@ -13,7 +13,7 @@ var runSequence = require('run-sequence');
 
 // tasks
 gulp.task('lint', function() {
-  gulp.src(['./**/*.js', '!./bower_components/**/*.js', '!./app/bower_components/**/*.js', '!./node_modules/**/*.js'])
+  gulp.src(['./**/*.js', '!./bower_components/**/*.js', '!./app/bower_components/**/*.js', '!./node_modules/**/*.js', '!./scripts/**/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(jshint.reporter('fail'));

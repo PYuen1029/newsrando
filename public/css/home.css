@@ -15,7 +15,6 @@ div.container section {
 /** Stage container **/
 
 .connected-carousels .stage {
-    width: 1020px;
     margin: 90px auto;
     position: relative;
 }
@@ -64,7 +63,7 @@ div.container section {
 /** Stage carousel specific styles **/
 
 .connected-carousels .carousel-stage {
-    height: 800px;
+    height: 500px;
     border: 10px solid #fff;
     -webkit-border-radius: 5px;
        -moz-border-radius: 5px;
@@ -200,5 +199,19 @@ div.container section {
     cursor: default;
 }
 
+.home__stage-image {
+  object-fit: cover;
+  object-position: 50% 0;
+  width:1000px;
+  height:500px;
+}
+
+.home__nav-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    object-position: 10% 0;
+
+}
 
 /**            END jcarousel style CODE             **/
