@@ -68,7 +68,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
     <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
     <script src="scripts/sweetalert.min.js"></script>
-    <script src="scripts/jquery.jcarousel.min.js"></script>
     <script>
 
     var user = {

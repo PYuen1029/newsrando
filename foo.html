@@ -1,0 +1,50 @@
+<div ng-view="" class="ng-scope"><div class="container ng-scope">
+	<section id="home__random-btn">
+		<button class="waves-effect waves-light btn-large"> Randomize! </button>
+	</section>
+	<section id="home__news-sources">
+		<h1 class="center-align"> News Sources </h1>
+		<!-- http://materializecss.com/carousel.html -->
+
+		<div class="connected-carousels" ng-show="user.loggedIn == 1 &amp;&amp; user.newsSources.length > 0">
+			<div class="stage">
+				<div class="carousel carousel-stage" data-jcarousel="true">
+                        <ul style="left: 0px; top: 0px;">
+                            <!-- ngRepeat: newsSource in user.newsSources --><li ng-repeat="newsSource in user.newsSources" class="ng-scope">
+                                <img class="home__stage-image" ng-src="/img/WebsiteImages/vox.com.png" alt="" src="/img/WebsiteImages/vox.com.png">
+                            </li><!-- end ngRepeat: newsSource in user.newsSources --><li ng-repeat="newsSource in user.newsSources" class="ng-scope">
+                                <img class="home__stage-image" ng-src="/img/WebsiteImages/nytimes.com.png" alt="" src="/img/WebsiteImages/nytimes.com.png">
+                            </li><!-- end ngRepeat: newsSource in user.newsSources -->
+
+                        </ul>
+				</div>
+				<a href="#" class="prev prev-stage inactive" data-jcarouselcontrol="true"><span>‹</span></a>
+				<a href="#" class="next next-stage inactive" data-jcarouselcontrol="true"><span>›</span></a>
+			</div>
+
+			<div class="navigation">
+				<a href="#" class="prev prev-navigation inactive" data-jcarouselcontrol="true">‹</a>
+				<a href="#" class="next next-navigation" data-jcarouselcontrol="true">›</a>
+				<div class="carousel carousel-navigation" data-jcarousel="true">
+					<ul style="left: 0px; top: 0px;">
+                        <!-- ngRepeat: newsSource in user.newsSources --><li ng-repeat="newsSource in user.newsSources" data-jcarouselcontrol="true" class="ng-scope">
+                        <img class="home__nav-image" ng-src="/img/WebsiteImages/vox.com.png" alt="" src="/img/WebsiteImages/vox.com.png">
+                        </li><!-- end ngRepeat: newsSource in user.newsSources --><li ng-repeat="newsSource in user.newsSources" data-jcarouselcontrol="true" class="ng-scope">
+                        <img class="home__nav-image" ng-src="/img/WebsiteImages/nytimes.com.png" alt="" src="/img/WebsiteImages/nytimes.com.png">
+                        </li><!-- end ngRepeat: newsSource in user.newsSources -->
+                    </ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" ng-show="user.loggedIn == 1">
+			<div class="col s3">
+				<a href="#!/NewsSourceManager"> Manage News Sources </a>
+			</div>
+		</div>
+
+		<div ng-show="user.loggedIn != 1" class="ng-hide">
+			Please <a href="/login">Login</a>.
+		</div>
+	</section>
+</div></div>
