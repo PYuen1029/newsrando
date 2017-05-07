@@ -11,22 +11,17 @@ div.container section {
 	margin-top: -50px;
 }
 
-/**            BEGIN slick-lightbox CODE             **/
-#home__website-thumbs li img {
-    width: 23vw;
-    height: 33vh;
-    object-fit: cover;
-    object-position: 0 0;
-    float: left;
-    margin: 20px;
-}
-/**            END slick-lightbox CODE             **/
-
 .demo-gallery figure{
     display: none;
 }
 
 .demo-gallery__img--main {
     margin: 0 0px 20px 0;
-    height: 300px;
+}
+
+.demo-gallery__img--main img {
+    width: 20vw;
+    height: 45vh;
+    object-fit: cover;
+    object-position: 0 0;
 }
