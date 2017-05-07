@@ -9,24 +9,11 @@
 	require('angular-sanitize');
 	require('angular-aria');
 	require('angular-ui-bootstrap');
-	// var ModalDialogDir = require('./directives/ModalDialogDir');
-	// var TagPenDir = require('./directives/TagPenDir');
+
 	var homepageCtrl = require('./controllers/HomepageCtrl');
 	var newsSourceCtrl = require('./controllers/NewsSourceCtrl');
-	// var submitCtrl = require('./controllers/SubmitCtrl');
 	var NewsSourceSvc = require('./services/NewsSourceSvc');
-	// var GetTagsSvc = require('./services/GetTagsSvc');
-	// var GetPoliticiansSvc = require('./services/GetPoliticiansSvc');
-	// var FlipFlopsApiSvc = require('./services/FlipFlopsApiSvc');
-	// var CardFcty = require('./factories/CardFcty');
-	// var imgSrc = {
-	// 	imgSrc: '/images/',
-	// 	defaultFlip: 'default_red.png',
-	// 	defaultFlop: 'default_blue.png'
-	// };
-	// var BackImage = require('./directives/BackImageDir');
-	// var ReadMore = require('./directives/ReadMoreDir');
-
+	// var FrontpageSvc = require('./services/FrontpageSvc');
 
 	// angular begins
 	angular.module(
@@ -56,32 +43,11 @@
 		}
 	])
 
-	// services
-	// .constant('IMGSRC', imgSrc)
-	// .factory('CardFcty', ['$http', 'IMGSRC', CardFcty])
-	// .factory('FlipFlopsApiSvc', ['$http', '$location', FlipFlopsApiSvc])
-	// .service('GetCardsSvc', ['$http', 'CardFcty', GetCardsSvc])
+	// services	
 	.service('NewsSourceSvc', ['$http', NewsSourceSvc])
-	// .factory('GetPoliticiansSvc', ['$http', GetPoliticiansSvc])
-	
+	// .service('ServiceNameSvc', ['$http', ServiceNameSvc])
+
 	//controllers
 	.controller('HomepageController', ['$scope', homepageCtrl])
-	.controller('NewsSourceController', ['$scope', '$http', 'NewsSourceSvc', newsSourceCtrl]);
-	// .controller('SubmitController', ['$scope', '$http', 'FlipFlopsApiSvc', 'GetPoliticiansSvc', '$location', submitCtrl])
-	
-	// directives
-	// .directive('modalDialogDir', ModalDialogDir)
-	// .directive('tagPenDir', ['GetTagsSvc', TagPenDir])
-	// .directive('readMore', ReadMore)
-	// .directive('stopEvent', function () {
- //        return {
- //            restrict: 'A',
- //            link: function (scope, element, attr) {
- //                if(attr && attr.stopEvent)
- //                    element.bind(attr.stopEvent, function (e) {
- //                        e.stopPropagation();
- //                    });
- //            }
- //        };
- //     });
+	.controller('NewsSourceController', ['$scope', '$http', '$location', 'NewsSourceSvc', newsSourceCtrl]);
 }());

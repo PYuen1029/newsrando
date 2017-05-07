@@ -1,4 +1,4 @@
-module.exports = function($scope, $http, NewsSourceSvc) {
+module.exports = function($scope, $http, $location, NewsSourceSvc) {
 	$('.modal').modal();
 
 	$scope.user = window.user;
@@ -17,7 +17,11 @@ module.exports = function($scope, $http, NewsSourceSvc) {
 
 		addNewsSourcePromise.then(
 			function successCallback(data) {
+				console.log('newsSourceCtrl.js: Line 20 -- data:');
+				console.dir(data);
+
 				$scope.user.newsSources = data.data;
+				// $location.path('/');
 			},
 			function errorCallback(data) {
 				// return a notification that it didn't work
