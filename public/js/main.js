@@ -29,7 +29,10 @@
 
 
 	// angular begins
-	angular.module('FlipFlopApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap'])
+	angular.module(
+		'FrontpagesApp', 
+		['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap']
+	)
 
 	// configs
 	.config([

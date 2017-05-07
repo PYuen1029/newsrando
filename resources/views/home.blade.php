@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html ng-app="FlipFlopApp">
+<html ng-app="FrontpagesApp">
   <head lang="en">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="google-site-verification" content="xk__bFcVfFtrLn8-sPClo9K2xZ1XRH7-1f-z7L-2Of0" />
-    <title>FlipFlops - NobisNews</title>
+    <title>Frontpages - NobisNews</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,300,500,500italic,700,900">
@@ -21,10 +21,13 @@
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/templatemo-style.css">
+    <link rel="stylesheet" href="css/photoswipe.css">
+    <link rel="stylesheet" href="css/default-skin/default-skin.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/newsSource.css">
     <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
     <!-- End Application-specific Styles -->
+    
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
   </head>
@@ -33,7 +36,7 @@
             <div class="main-header">
                 <div class="row">
                     <div class="logo col s9">
-                        <h1><a href="#!/">News Randomizer</a></h1>
+                        <h1><a href="#!/">Frontpages</a></h1>
                         <span>A NobisNews Project</span>
                     </div>
                     <div class="col s3">
@@ -68,6 +71,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
     <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
     <script src="scripts/sweetalert.min.js"></script>
+    <script src="scripts/photoswipe.js"></script>
+    <script src="scripts/photoswipe-ui-default.js"></script>
     <script>
 
     var user = {
