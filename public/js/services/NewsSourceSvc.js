@@ -17,8 +17,6 @@ module.exports = function($http) {
 		var deleteNewsSourcePromise = $http.delete('newssource/' + id);
 
 		return deleteNewsSourcePromise;
-		// LEFT OFF
-
 	};
 
 	return {

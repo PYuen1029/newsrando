@@ -13,7 +13,7 @@
 	var homepageCtrl = require('./controllers/HomepageCtrl');
 	var newsSourceCtrl = require('./controllers/NewsSourceCtrl');
 	var NewsSourceSvc = require('./services/NewsSourceSvc');
-	// var FrontpageSvc = require('./services/FrontpageSvc');
+	var FrontpageSvc = require('./services/FrontpageSvc');
 
 	// angular begins
 	angular.module(
@@ -45,9 +45,9 @@
 
 	// services	
 	.service('NewsSourceSvc', ['$http', NewsSourceSvc])
-	// .service('ServiceNameSvc', ['$http', ServiceNameSvc])
+	.service('FrontpageSvc', ['$http', FrontpageSvc])
 
 	//controllers
-	.controller('HomepageController', ['$scope', homepageCtrl])
+	.controller('HomepageController', ['$scope', 'FrontpageSvc', homepageCtrl])
 	.controller('NewsSourceController', ['$scope', '$http', '$location', 'NewsSourceSvc', newsSourceCtrl]);
 }());

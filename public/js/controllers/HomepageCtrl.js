@@ -1,5 +1,7 @@
-module.exports = function($scope) {
+module.exports = function($scope, FrontpageSvc) {
 	$scope.user = window.user;
+
+	FrontpageSvc.check($scope.user.newsSources);
 	
 	(function() {
 

@@ -18,7 +18,13 @@ Route::get('/', [
 
 Auth::routes();
 
-Route::resource('newssource', 'NewsSourceController');
+Route::resource('newssource', 'NewsSourceController', [
+	'only' => ['store', 'create', 'update']
+]);
+
+Route::resource('frontpage', 'FrontpageController', [
+	'only' => ['update']
+]);
 
 Route::get('/messonamission', [
 	'uses' => 'HomeController@test',
