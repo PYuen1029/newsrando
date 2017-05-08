@@ -9,15 +9,15 @@
 		<div class="row">
 			<div id="demo-test-gallery" class="demo-gallery">
 
-				<a ng-href="{{newsSource.frontpages[0].filepath}}" 
+				<a ng-href="{{newsSource.frontpage.filepath}}" 
                     ng-repeat="newsSource in user.newsSources"
                     data-size="1600x1600" 
-                    ng-attr-data-med="{{newsSource.frontpages[0].filepath}}" 
+                    ng-attr-data-med="{{newsSource.frontpage.filepath}}" 
                     data-med-size="1024x1024" 
-                    data-author="As of 3:00PM April 21, 2017." 
+                    ng-attr-data-updatedAt="{{formatDate(newsSource.updated_at)}}" 
                     class="demo-gallery__img--main col m4 s6"
                 >
-					   <img ng-src="{{newsSource.frontpages[0].filepath}}" alt="" />
+					   <img ng-src="{{newsSource.frontpage.filepath}}" alt="" />
 					<figure>{{ newsSource.base_name }}</figure>
 				</a>
 
@@ -73,7 +73,6 @@
                 <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
                 <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
                 <div class="pswp__preloader">
                     <div class="pswp__preloader__icn">
                       <div class="pswp__preloader__cut">

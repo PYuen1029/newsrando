@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Frontpage extends Model
 {
-    public function newsSources()
+    public function newsSource()
     {
         return $this->belongsTo('App\NewsSource');
     }
@@ -45,5 +45,25 @@ class Frontpage extends Model
         $offset += strlen($needle);
 
         return substr($path, $offset);
+    }
+
+    public function updateImage()
+    {
+        $newsSource = $this->newsSource;
+
+        $filepath = (new WebsiteImageService())->update($newsSource);
+
+        // trim or whatever is needed to make it publicly accessible
+        $filepath = STATIC::trimPath($filepath);
+
+        $this->filepath = $filepath;
+
+        $this->save();
+
+        $newsSource->updated_at = date("Y-m-d H:i:s");
+
+        $newsSource->save();
+
+        return $this;
     }
 }

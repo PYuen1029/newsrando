@@ -14,9 +14,9 @@ class NewsSource extends Model
 		return $this->belongsToMany('App\User');
 	}
 
-	public function frontpages()
+	public function frontpage()
 	{
-		return $this->hasMany('App\Frontpage');
+		return $this->hasOne('App\Frontpage');
 	}
 
 	static public function selfCreate($data)

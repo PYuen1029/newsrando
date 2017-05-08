@@ -43,11 +43,7 @@ class NewsSourceController extends Controller
 		$newsSource = NewsSource::selfCreate($request->all());
 		// else, just attach it
 
-		return Auth::user()
-			->newsSources()
-			->with('frontpages')
-			->get()
-			->toJson();
+		return Auth::user()->standardBackendOutput();
 	}
 
 	/**
@@ -96,6 +92,7 @@ class NewsSourceController extends Controller
 
 		Auth::user()->newsSources()->detach($id);
 
-		return Auth::user()->newsSources->toJson();
+		return Auth::user()->standardBackendOutput();
+
 	}
 }

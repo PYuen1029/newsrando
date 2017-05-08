@@ -27,7 +27,7 @@ class HomeController extends Controller
     {
         if(Auth::check()) {
             $user = Auth::user();
-            $newsSources = $user->newsSources()->with('frontpages')->get()->toJson();
+            $newsSources = $user->standardBackendOutput();
         } else {
             $user = null;
             $newsSources = null;

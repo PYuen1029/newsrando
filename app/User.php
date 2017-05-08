@@ -31,4 +31,12 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\NewsSource');
     }
+
+    public function standardBackendOutput()
+    {
+        return $this->newsSources()
+            ->with('frontpage')
+            ->get()
+            ->toJson();
+    }
 }

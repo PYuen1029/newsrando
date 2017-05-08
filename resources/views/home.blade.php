@@ -53,7 +53,7 @@
                                 <b>Last Used:</b> <span>November 5, 2016</span>
                             </li>
                             <li>
-                                <a href="{{ route('logout') }}">Logout</a>
+                                <button id="logout-btn"> Logout </button>
                             </li>
 
                         @else
@@ -73,12 +73,32 @@
     <script src="scripts/sweetalert.min.js"></script>
     <script src="scripts/photoswipe.js"></script>
     <script src="scripts/photoswipe-ui-default.js"></script>
+    <script src="scripts/moment.js"></script>
     <script>
+    // handle logout button action
+    function post(path, method) {
+        method = method || "post"; // Set method to post by default if not specified.
+
+        // The rest of this code assumes you are not using a library.
+        // It can be made less wordy if you use one.
+        var form = document.createElement("form");
+        form.setAttribute("method", method);
+        form.setAttribute("action", path);
+
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    $('#logout-btn').click(function(evt){
+        post(
+            'logout'
+        );
+    });
 
     var user = {
         username: '{{ isset($user->username) ? $user->username : null }}',
         loggedIn: '{{ isset($user) ? true : null }}',
-        newsSources: JSON.parse({!! isset($user) ?  json_encode($newsSources) : '' !!})
+        newsSources: JSON.parse({!! isset($user) ?  json_encode($newsSources) : 'null' !!})
         
     };
     </script>

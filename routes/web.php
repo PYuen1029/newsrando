@@ -19,7 +19,7 @@ Route::get('/', [
 Auth::routes();
 
 Route::resource('newssource', 'NewsSourceController', [
-	'only' => ['store', 'create', 'update']
+	'only' => ['store', 'create', 'update', 'destroy']
 ]);
 
 Route::resource('frontpage', 'FrontpageController', [

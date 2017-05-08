@@ -1,8 +1,18 @@
 module.exports = function($scope, FrontpageSvc) {
 	$scope.user = window.user;
 
-	FrontpageSvc.check($scope.user.newsSources);
+	if ($scope.user) {
+		FrontpageSvc.check($scope.user.newsSources);
+	}
 	
+	$scope.formatDate = function(date) {
+
+		date = new moment(date).local().format('h:mm A, MMMM Do, YYYY');
+
+		return 'Updated as of: ' + date;
+	};
+
+	// PHOTOSWIPE PLUGIN CODE
 	(function() {
 
 		var initPhotoSwipeFromDOM = function(gallerySelector) {
@@ -11,7 +21,6 @@ module.exports = function($scope, FrontpageSvc) {
 			    var thumbElements = el.childNodes,
 			        numNodes = thumbElements.length,
 			        items = [],
-			        el,
 			        childElements,
 			        thumbnailEl,
 			        size,
@@ -34,7 +43,7 @@ module.exports = function($scope, FrontpageSvc) {
 						src: el.getAttribute('href'),
 						w: parseInt(size[0], 10),
 						h: parseInt(size[1], 10),
-						author: el.getAttribute('data-author')
+						updatedAt: el.getAttribute('data-updatedAt')
 			        };
 
 			        item.el = el; // save link to element for getThumbBoundsFn
@@ -168,7 +177,7 @@ module.exports = function($scope, FrontpageSvc) {
 							captionEl.children[0].innerText = '';
 							return false;
 						}
-						captionEl.children[0].innerHTML = item.title +  '<br/><small>Photo: ' + item.author + '</small>';
+						captionEl.children[0].innerHTML = item.title +  '<br/><small>' + item.updatedAt + '</small>';
 						return true;
 			        }
 					

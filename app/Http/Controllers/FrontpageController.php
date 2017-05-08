@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Frontpage;
+use App\NewsSource;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FrontpageController extends Controller
 {
@@ -67,7 +70,17 @@ class FrontpageController extends Controller
 	 */
 	public function update(Request $request, $id)
 	{
-		echo "this being updated y'all";
+		$newsSource = NewsSource::findOrFail($id);
+
+		$frontpage = $newsSource->frontpage;
+
+		$frontpage = $frontpage->updateImage();
+
+		// return the standard stuff, make it into a function on User so you're not duplicating code
+		$user = Auth::user();
+
+		return $user->standardBackendOutput();
+
 	}
 
 	/**
