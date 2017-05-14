@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
@@ -50,5 +51,12 @@ class NewsSource extends Model
 		if (strlen($host) > 50)
 			$host = substr($host, 0, 47) . '...';
 		return $host;
+	}
+
+	public function wasUpdatedInTheLastHour()
+	{
+		$anHourAgo = (new Carbon())->subHour();
+		
+		return $anHourAgo->lte($this->updated_at);
 	}
 }

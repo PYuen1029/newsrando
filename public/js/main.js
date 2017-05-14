@@ -45,9 +45,10 @@
 
 	// services	
 	.service('NewsSourceSvc', ['$http', NewsSourceSvc])
+	// FrontpageSvc replaced by frontpage:update artisan command
 	.service('FrontpageSvc', ['$http', FrontpageSvc])
 
 	//controllers
-	.controller('HomepageController', ['$scope', 'FrontpageSvc', homepageCtrl])
+	.controller('HomepageController', ['$scope', homepageCtrl])
 	.controller('NewsSourceController', ['$scope', '$http', '$location', 'NewsSourceSvc', newsSourceCtrl]);
 }());

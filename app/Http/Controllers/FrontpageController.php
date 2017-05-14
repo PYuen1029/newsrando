@@ -70,16 +70,16 @@ class FrontpageController extends Controller
 	 */
 	public function update(Request $request, $id)
 	{
-		$newsSource = NewsSource::findOrFail($id);
+		// $newsSource = NewsSource::findOrFail($id);
 
-		$frontpage = $newsSource->frontpage;
+		// $frontpage = $newsSource->frontpage;
 
-		$frontpage = $frontpage->updateImage();
+		// $frontpage = $frontpage->updateImage();
 
-		// return the standard stuff, make it into a function on User so you're not duplicating code
-		$user = Auth::user();
+		// // return the standard stuff, make it into a function on User so you're not duplicating code
+		// $user = Auth::user();
 
-		return $user->standardBackendOutput();
+		// return $user->standardBackendOutput();
 
 	}
 

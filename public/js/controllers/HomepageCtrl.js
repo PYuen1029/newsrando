@@ -1,9 +1,5 @@
-module.exports = function($scope, FrontpageSvc) {
+module.exports = function($scope) {
 	$scope.user = window.user;
-
-	if ($scope.user) {
-		FrontpageSvc.check($scope.user.newsSources);
-	}
 	
 	$scope.formatDate = function(date) {
 
