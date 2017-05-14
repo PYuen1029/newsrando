@@ -17,9 +17,6 @@ module.exports = function($scope, $http, $location, NewsSourceSvc) {
 
 		addNewsSourcePromise.then(
 			function successCallback(data) {
-				console.log('newsSourceCtrl.js: Line 20 -- data:');
-				console.dir(data);
-
 				$scope.user.newsSources = data.data;
 				// $location.path('/');
 			},

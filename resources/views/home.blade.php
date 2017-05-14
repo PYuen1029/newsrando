@@ -74,6 +74,8 @@
     <script src="scripts/photoswipe.js"></script>
     <script src="scripts/photoswipe-ui-default.js"></script>
     <script src="scripts/moment.js"></script>
+    <script src="scripts/moment-timezone.js"></script>
+    <script src="scripts/moment-timezone-data-load.js"></script>
     <script>
     // handle logout button action
     function post(path, method) {

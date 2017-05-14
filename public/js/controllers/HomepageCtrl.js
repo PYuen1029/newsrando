@@ -7,7 +7,7 @@ module.exports = function($scope, FrontpageSvc) {
 	
 	$scope.formatDate = function(date) {
 
-		date = new moment(date).local().format('h:mm A, MMMM Do, YYYY');
+		date = new moment(date + 'Z').tz('America/New_York').format('h:mm A, MMMM Do, YYYY zz');
 
 		return 'Updated as of: ' + date;
 	};
@@ -86,7 +86,12 @@ module.exports = function($scope, FrontpageSvc) {
 
 			var onThumbnailsClick = function(e) {
 			    e = e || window.event;
-			    e.preventDefault ? e.preventDefault() : e.returnValue = false;
+			    
+			    if (e.preventDefault) {
+			    	e.preventDefault();
+			    } else {
+			    	e.returnValue = false;
+			    }
 
 			    var eTarget = e.target || e.srcElement;
 
