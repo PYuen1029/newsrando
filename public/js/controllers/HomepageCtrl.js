@@ -1,5 +1,6 @@
-module.exports = function($scope) {
+module.exports = function($scope, $window) {
 	$scope.user = window.user;
+	$scope.frontpageUrl = 'www.google.com';
 	
 	$scope.formatDate = function(date) {
 
@@ -8,11 +9,21 @@ module.exports = function($scope) {
 		return 'Updated as of: ' + date;
 	};
 
+	$scope.changeFrontpage = function changeFrontpage(frontpage) {
+		$scope.frontpageUrl = frontpage.url;
+	};
+
+	$scope.gotoFrontpage = function gotoFrontpage() {
+		$window.open($scope.frontpageUrl, '_blank');
+	};
+
 	// PHOTOSWIPE PLUGIN CODE
 	(function() {
 
+		// wrapper function
 		var initPhotoSwipeFromDOM = function(gallerySelector) {
 
+			// invocation: 
 			var parseThumbnailElements = function(el) {
 			    var thumbElements = el.childNodes,
 			        numNodes = thumbElements.length,
@@ -151,6 +162,7 @@ module.exports = function($scope) {
 			    return params;
 			};
 
+			// invocation: openPhotoSwipe( hashData.pid,  galleryElements[ hashData.gid - 1 ], true, true )
 			var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
 			    var pswpElement = document.querySelectorAll('.pswp')[0],
 			        gallery,

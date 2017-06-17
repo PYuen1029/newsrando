@@ -85,7 +85,8 @@
   display: none;
   background-position: -88px 0; }
 
-.pswp--zoom-allowed .pswp__button--zoom {
+.pswp--zoom-allowed .pswp__button--
+ {
   display: block; }
 
 .pswp--zoomed-in .pswp__button--zoom {

@@ -49,6 +49,6 @@
 	.service('FrontpageSvc', ['$http', FrontpageSvc])
 
 	//controllers
-	.controller('HomepageController', ['$scope', homepageCtrl])
+	.controller('HomepageController', ['$scope', '$window', homepageCtrl])
 	.controller('NewsSourceController', ['$scope', '$http', '$location', 'NewsSourceSvc', newsSourceCtrl]);
 }());

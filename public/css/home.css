@@ -25,3 +25,12 @@ div.container section {
     object-fit: cover;
     object-position: 0 0;
 }
+
+.home__caption-url {
+    font-size: 1.5em;
+}
+
+.home__visit-message {
+    font-style: italic;
+    opacity: .3;
+}

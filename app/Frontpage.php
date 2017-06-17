@@ -34,6 +34,7 @@ class Frontpage extends Model
     public static function trimPath($path)
     {
         ///home/vagrant/code/newsrando/src/Services/../../web/
+
         $needle = '/public';
 
         $offset = stripos($path, $needle);

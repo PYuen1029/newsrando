@@ -9,16 +9,24 @@
 		<div class="row">
 			<div id="demo-test-gallery" class="demo-gallery">
 
-				<a ng-href="{{newsSource.frontpage.filepath}}" 
+				<a ng-href="{{newsSource.frontpage.filepath}}?ts={{newsSource.frontpage.updated_at}}" 
                     ng-repeat="newsSource in user.newsSources"
                     data-size="1600x1600" 
                     ng-attr-data-med="{{newsSource.frontpage.filepath}}" 
                     data-med-size="1024x1024" 
                     ng-attr-data-updatedAt="{{formatDate(newsSource.updated_at)}}" 
                     class="demo-gallery__img--main col m4 s6"
+                    ng-click="changeFrontpage(newsSource)"
                 >
-					   <img ng-src="{{newsSource.frontpage.filepath}}" alt="" />
-					<figure>{{ newsSource.base_name }}</figure>
+					   <img ng-src="{{newsSource.frontpage.filepath}}?ts={{newsSource.frontpage.updated_at}}" alt="" />
+					<figure>
+                        <span class="left home__caption-url">
+                            {{ newsSource.base_name }}
+                        </span>
+                        <span class="right home__visit-message">
+                            Click here to visit the website.
+                        </span>
+                    </figure>
 				</a>
 
 			</div>
@@ -64,6 +72,8 @@
 
                 <div class="pswp__counter"></div>
 
+                <button class="pswp__button pswp__button--enter" title="Enter Site"></button>
+                
                 <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 
                 <button class="pswp__button pswp__button--share" title="Share"></button>
@@ -92,8 +102,8 @@
             <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
             </button>
 
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
+            <div class="pswp__caption" ng-click="gotoFrontpage()">
+                <div class="pswp__caption__center" ng-attr-data-frontpage-url="{{frontpageUrl}}"></div>
             </div>
 
         </div>
