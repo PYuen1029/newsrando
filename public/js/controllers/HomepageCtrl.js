@@ -1,7 +1,29 @@
 module.exports = function($scope, $window) {
+
+	/* helper functions */
+	
+	function getRandomIntInclusive(min, max) {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	/* properties */
+
 	$scope.user = window.user;
+
 	$scope.frontpageUrl = 'www.google.com';
 	
+
+	/* methods */
+	$scope.randomize = function() {
+		max = $scope.user.newsSources.length;
+
+		$scope.frontpageUrl = $scope.user.newsSources[getRandomIntInclusive(1, max)].url;
+
+		$scope.gotoFrontpage();
+	};
+
 	$scope.formatDate = function(date) {
 
 		date = new moment(date + 'Z').tz('America/New_York').format('h:mm A, MMMM Do, YYYY zz');
@@ -14,6 +36,7 @@ module.exports = function($scope, $window) {
 	};
 
 	$scope.gotoFrontpage = function gotoFrontpage() {
+
 		$window.open($scope.frontpageUrl, '_blank');
 	};
 

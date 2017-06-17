@@ -1,8 +1,30 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 module.exports = function($scope, $window) {
+
+	/* helper functions */
+	
+	function getRandomIntInclusive(min, max) {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	/* properties */
+
 	$scope.user = window.user;
+
 	$scope.frontpageUrl = 'www.google.com';
 	
+
+	/* methods */
+	$scope.randomize = function() {
+		max = $scope.user.newsSources.length;
+
+		$scope.frontpageUrl = $scope.user.newsSources[getRandomIntInclusive(1, max)].url;
+
+		$scope.gotoFrontpage();
+	};
+
 	$scope.formatDate = function(date) {
 
 		date = new moment(date + 'Z').tz('America/New_York').format('h:mm A, MMMM Do, YYYY zz');
@@ -15,6 +37,7 @@ module.exports = function($scope, $window) {
 	};
 
 	$scope.gotoFrontpage = function gotoFrontpage() {
+
 		$window.open($scope.frontpageUrl, '_blank');
 	};
 
