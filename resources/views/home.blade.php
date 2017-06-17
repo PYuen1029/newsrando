@@ -47,7 +47,7 @@
                                 <b>Username:</b> <span>{{ $user->email }}</span>
                             </li>
                             <li>
-                                <b>News Sources Added:</b> <span>{{ $user->newsSourceCount }}</span>
+                                <b>News Sources Added:</b> <span>{{ count($user->newsSources) }}</span>
                             </li>
                             <li>
                                 <b>Last Used:</b> <span>November 5, 2016</span>

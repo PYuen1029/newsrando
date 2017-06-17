@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Intervention\Image\Facades\Image;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 
 class HomeController extends Controller
 {
@@ -27,6 +28,11 @@ class HomeController extends Controller
     {
         if(Auth::check()) {
             $user = Auth::user();
+
+            // save last login time
+            $user->last_login = Carbon::now();
+            $user->save();
+
             $newsSources = $user->standardBackendOutput();
         } else {
             $user = null;
