@@ -5,7 +5,7 @@ module.exports = function($scope, $window) {
 	function getRandomIntInclusive(min, max) {
 		min = Math.ceil(min);
 		max = Math.floor(max);
-		return Math.floor(Math.random() * (max - min + 1)) + min;
+		return Math.floor(Math.random() * (max - min)) + min;
 	}
 
 	/* properties */
@@ -19,7 +19,7 @@ module.exports = function($scope, $window) {
 	$scope.randomize = function() {
 		max = $scope.user.newsSources.length;
 
-		$scope.frontpageUrl = $scope.user.newsSources[getRandomIntInclusive(1, max)].url;
+		$scope.frontpageUrl = $scope.user.newsSources[getRandomIntInclusive(0, max)].url;
 
 		$scope.gotoFrontpage();
 	};

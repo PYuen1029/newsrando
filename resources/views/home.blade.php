@@ -50,7 +50,7 @@
                                 <b>News Sources Added:</b> <span>{{ count($user->newsSources) }}</span>
                             </li>
                             <li>
-                                <b>Last Used:</b> <span>November 5, 2016</span>
+                                <b>Last Used:</b> <span>{{Carbon\Carbon::parse($user->last_login)->diffForHumans()}}</span>
                             </li>
                             <li>
                                 <button id="logout-btn"> Logout </button>
